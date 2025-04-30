@@ -3,7 +3,7 @@ console.log("Welcome to Spotify");
 //Intialize the variables
 let songIndex = 0;
 let audioElement = new Audio(
-  "C:\\Users\\KIIT\\Desktop\\Spotify clone\\songs\\1.mp3"
+  "songs\\1.mp3"
 );
 let masterPlay = document.getElementById("masterPlay");
 let myProgressBar = document.getElementById("myProgressBar");
@@ -12,56 +12,56 @@ let songItems = Array.from(document.getElementsByClassName("songItem"));
 let songs = [
   {
     songName: "Let Me Love You",
-    filepath: "C:\\Users\\KIIT\\Desktop\\Spotify clone\\songs\\1.mp3",
-    coverPath: "C:\\Users\\KIIT\\Desktop\\Spotify clone\\covers\\1.jpg",
+    filepath: "songs\\1.mp3",
+    coverPath: "covers\\1.jpg",
   },
   {
     songName: "That's What I Like",
     filepath:
-      "C:\\Users\\KIIT\\Desktop\\Spotify clone\\songs\\2.mp3",
-    coverPath: "C:\\Users\\KIIT\\Desktop\\Spotify clone\\covers\\2.jpg",
+      "songs\\2.mp3",
+    coverPath: "covers\\2.jpg",
   },
   {
     songName: "Attention",
     filepath:
-      "C:\\Users\\KIIT\\Desktop\\Spotify clone\\songs\\3.mp3",
-    coverPath: "C:\\Users\\KIIT\\Desktop\\Spotify clone\\covers\\3.jpg",
+      "songs\\3.mp3",
+    coverPath: "covers\\3.jpg",
   },
   {
     songName: "We Don't Talk Anymore",
     filepath:
-      "C:\\Users\\KIIT\\Desktop\\Spotify clone\\songs\\ridonezz_charlie-puth-we-don-t-talk-anymore-feat-selena.mp3",
-    coverPath: "C:\\Users\\KIIT\\Desktop\\Spotify clone\\covers\\4.jpg",
+      "songs\\ridonezz_charlie-puth-we-don-t-talk-anymore-feat-selena.mp3",
+    coverPath: "covers\\4.jpg",
   },
   {
     songName: "Worth It",
     filepath:
-      "C:\\Users\\KIIT\\Desktop\\Spotify clone\\songs\\ridonezz_fifth-harmony-wort-it.mp3",
-    coverPath: "C:\\Users\\KIIT\\Desktop\\Spotify clone\\covers\\5.jpg",
+      "songs\\ridonezz_fifth-harmony-wort-it.mp3",
+    coverPath: "covers\\5.jpg",
   },
   {
     songName: "Drag Me Down",
     filepath:
-      "C:\\Users\\KIIT\\Desktop\\Spotify clone\\songs\\ridonezz_one-direction-drag-me-down.mp3",
-    coverPath: "C:\\Users\\KIIT\\Desktop\\Spotify clone\\covers\\6.jpg",
+      "songs\\ridonezz_one-direction-drag-me-down.mp3",
+    coverPath: "covers\\6.jpg",
   },
   {
     songName: "Cheap Thrills",
     filepath:
-      "C:\\Users\\KIIT\\Desktop\\Spotify clone\\songs\\ridonezz_sia-feat-sean-paul-cheap-thrills.mp3",
-    coverPath: "C:\\Users\\KIIT\\Desktop\\Spotify clone\\covers\\7.jpg",
+      "songs\\ridonezz_sia-feat-sean-paul-cheap-thrills.mp3",
+    coverPath: "covers\\7.jpg",
   },
   {
     songName: "Don't Let Me Down",
     filepath:
-      "C:\\Users\\KIIT\\Desktop\\Spotify clone\\songs\\ridonezz_the-chainsmokers-don-t-let-me-down.mp3",
-    coverPath: "C:\\Users\\KIIT\\Desktop\\Spotify clone\\covers\\8.jpg",
+      "songs\\ridonezz_the-chainsmokers-don-t-let-me-down.mp3",
+    coverPath: "covers\\8.jpg",
   },
   {
     songName: "Closer",
     filepath:
-      "C:\\Users\\KIIT\\Desktop\\Spotify clone\\songs\\ridonezz_the-chainsmokers-ft-haley-closer.mp3",
-    coverPath: "C:\\Users\\KIIT\\Desktop\\Spotify clone\\covers\\9.jpg",
+      "songs\\ridonezz_the-chainsmokers-ft-haley-closer.mp3",
+    coverPath: "covers\\9.jpg",
   },
 ];
 songItems.forEach((ele, i) => {
