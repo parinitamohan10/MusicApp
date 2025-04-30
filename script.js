@@ -1,14 +1,16 @@
 console.log("Welcome to Spotify");
 
 //Intialize the variables
-let songIndex = 0;
+let songIndex = 1;
 let audioElement = new Audio(
   "songs\\1.mp3"
 );
 let masterPlay = document.getElementById("masterPlay");
 let myProgressBar = document.getElementById("myProgressBar");
 let gif = document.getElementById("gif");
+let masterSongName = document.getElementById("masterSongName");
 let songItems = Array.from(document.getElementsByClassName("songItem"));
+
 let songs = [
   {
     songName: "Let Me Love You",
@@ -30,37 +32,37 @@ let songs = [
   {
     songName: "We Don't Talk Anymore",
     filepath:
-      "songs\\ridonezz_charlie-puth-we-don-t-talk-anymore-feat-selena.mp3",
+      "songs\\4.mp3",
     coverPath: "covers\\4.jpg",
   },
   {
     songName: "Worth It",
     filepath:
-      "songs\\ridonezz_fifth-harmony-wort-it.mp3",
+      "songs\\5.mp3",
     coverPath: "covers\\5.jpg",
   },
   {
     songName: "Drag Me Down",
     filepath:
-      "songs\\ridonezz_one-direction-drag-me-down.mp3",
+      "songs\\6.mp3",
     coverPath: "covers\\6.jpg",
   },
   {
     songName: "Cheap Thrills",
     filepath:
-      "songs\\ridonezz_sia-feat-sean-paul-cheap-thrills.mp3",
+      "songs\\7.mp3",
     coverPath: "covers\\7.jpg",
   },
   {
     songName: "Don't Let Me Down",
     filepath:
-      "songs\\ridonezz_the-chainsmokers-don-t-let-me-down.mp3",
+      "songs\\8.mp3",
     coverPath: "covers\\8.jpg",
   },
   {
     songName: "Closer",
     filepath:
-      "songs\\ridonezz_the-chainsmokers-ft-haley-closer.mp3",
+      "songs\\9.mp3",
     coverPath: "covers\\9.jpg",
   },
 ];
@@ -110,12 +112,49 @@ Array.from(document.getElementsByClassName("songItemPlay")).forEach(
   (element) => {
     element.addEventListener("click", (e) => {
       console.log(e.target);
-      makeAllPlay();
-      index = parseInt(e.target.id);
+      makeAllPlay(); 
+      songIndex = parseInt(e.target.id);
       e.target.classList.remove("fa-circle-play");
       e.target.classList.add("fa-circle-pause");
-      audioElement.src = `songs/${index}.mp3`;
+      audioElement.src = `songs/${songIndex}.mp3`;
+      masterSongName.innerText = songs[songIndex-1].songName;
       audioElement.currentTime = 0;
+      audioElement.play();
+      gif.style.opacity=1;
+      masterPlay.classList.remove("fa-circle-play");
+      masterPlay.classList.add("fa-circle-pause");
     });
   }
 );
+
+document.getElementById('next').addEventListener('click',()=>{
+  if(songIndex>=8){
+    songIndex=1;
+  }
+  else{
+    songIndex+=1;
+    audioElement.src = `songs/${songIndex}.mp3`;
+    masterSongName.innerText = songs[songIndex-1].songName;
+    audioElement.currentTime = 0;
+      audioElement.play();
+      gif.style.opacity=1;
+      masterPlay.classList.remove("fa-circle-play");
+      masterPlay.classList.add("fa-circle-pause");
+}
+})
+
+document.getElementById('previous').addEventListener('click',()=>{
+  if(songIndex<=1){
+    songIndex=1;
+  }
+  else{
+    songIndex-=1;
+    audioElement.src = `songs/${songIndex}.mp3`;
+    masterSongName.innerText = songs[songIndex-1].songName;
+      audioElement.currentTime = 0;
+      audioElement.play();
+      gif.style.opacity=1;
+      masterPlay.classList.remove("fa-circle-play");
+      masterPlay.classList.add("fa-circle-pause");
+  }
+})    
